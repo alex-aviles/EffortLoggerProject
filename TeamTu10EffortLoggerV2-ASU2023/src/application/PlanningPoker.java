@@ -47,13 +47,6 @@ public class PlanningPoker extends Application {
         mainApp.changeUserStory(userStory);
         String keyWords = db.getKeyWords(projectName, userStory);
         
-        for(int i = 0; i < db.getBacklogSize(); i++) {
-        	if(db.getBacklogProjectName(i).equals(projectName) && (db.getStoryPoint(i) == -1)) {
-        		userStory = db.getBacklogUserStory(i);
-        		keyWords = db.getBacklogKeyWords(i);
-        	}
-        }
-        
         if (classState.equals("Generate")) {
         	Label userStoryLabel = new Label("User Story: " + userStory);
         	
